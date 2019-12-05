@@ -15,6 +15,16 @@ class BeverageTest extends TestCase
 {
     use RefreshDatabase;
 
+    private $beverages;
+
+    // setup testcases
+    public function setUp(): void {
+        parent::setUp();
+        // create beverage 
+        $this->beverages = factory(Beverage::class)->make();
+
+    }
+
     /**
      * A basic unit test for name attribute.
      *
@@ -22,11 +32,8 @@ class BeverageTest extends TestCase
      */
     public function test_beverage_name_attribute()
     {   
-        // create beverage 
-        $beverages = factory(Beverage::class)->make();
-
         // get beverage name 
-        $beverageName = $beverages->name;
+        $beverageName = $this->beverages->name;
 
         // assert
         $this->assertNotEmpty($beverageName); // if true == found name
@@ -39,11 +46,8 @@ class BeverageTest extends TestCase
      */
     public function test_beverage_type_attribute()
     {   
-        // create beverage 
-        $beverages = factory(Beverage::class)->make();
-
         // get beverage type 
-        $beverageType = $beverages->type;
+        $beverageType = $this->beverages->type;
 
         // assert
         $this->assertNotEmpty($beverageType); // if true == found type
