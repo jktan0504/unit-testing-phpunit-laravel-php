@@ -15,6 +15,8 @@ class CreateBeveragesTable extends Migration
     {
         Schema::create('beverages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name', 800);
+            $table->string('type', 650);
             $table->timestamps();
         });
     }
