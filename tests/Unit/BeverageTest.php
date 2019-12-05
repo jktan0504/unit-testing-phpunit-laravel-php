@@ -16,7 +16,7 @@ class BeverageTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A basic unit test example.
+     * A basic unit test for name attribute.
      *
      * @return void
      */
@@ -30,5 +30,22 @@ class BeverageTest extends TestCase
 
         // assert
         $this->assertNotEmpty($beverageName); // if true == found name
+    }
+
+    /**
+     * A basic unit test for type attribute.
+     *
+     * @return void
+     */
+    public function test_beverage_type_attribute()
+    {   
+        // create beverage 
+        $beverages = factory(Beverage::class)->make();
+
+        // get beverage type 
+        $beverageType = $beverages->type;
+
+        // assert
+        $this->assertNotEmpty($beverageType); // if true == found type
     }
 }
