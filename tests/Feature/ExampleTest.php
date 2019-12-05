@@ -12,10 +12,15 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testFirstRoute()
     {
+        // first route
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        // $response->assertStatus(200); // check is this route exist ? 200 : 404
+        
+        // more on "https://laravel.com/docs/6.x/http-tests"
+
+        $response->assertSeeInOrder(['Laravel','Docs']);
     }
 }
