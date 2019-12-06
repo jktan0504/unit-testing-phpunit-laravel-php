@@ -17,6 +17,8 @@ class BeverageFeatureTest extends TestCase
         // beverage route
         $response = $this->get('/beverage');
 
+        $response->assertSee($beverage->name);
+
         $response->assertStatus(200); // check is this route exist ? 200 : 404
     }
 }
