@@ -5,8 +5,11 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
+use App\Beverage;
+
 class BeverageFeatureTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -14,6 +17,8 @@ class BeverageFeatureTest extends TestCase
      */
     public function test_beverage_page_see_beverages()
     {
+        $beverage = factory(Beverage::class)->make();
+
         // beverage route
         $response = $this->get('/beverage');
 

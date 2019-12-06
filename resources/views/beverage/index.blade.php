@@ -64,6 +64,12 @@
         </style>
     </head>
     <body>
-        <div></div>
+        <div>
+            @foreach ($beverages as $item)
+                <div>
+                    {{ $item->name }}
+                </div>
+            @endforeach
+        </div>
     </body>
 </html>

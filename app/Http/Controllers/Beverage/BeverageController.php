@@ -11,6 +11,6 @@ class BeverageController extends Controller
 {
     public function index() {
         $beverages = Beverage::all();
-        return view('beverage.index');
+        return view('beverage.index', compact('beverages'));
     }
 }
