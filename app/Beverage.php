@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Exceptions\MuslimCannotBuyAcholicBeverageException;
 
 class Beverage extends Model
 {
@@ -16,4 +17,13 @@ class Beverage extends Model
     protected $fillable = [
         'name', 'type'
     ];
+
+    // buy drink
+    public function buyDrink() {
+        if (auth()->user()->isMuslim()) {
+            throw new MuslimCannotBuyAcholicBeverageException();
+        }
+
+        return true;
+    }
 }

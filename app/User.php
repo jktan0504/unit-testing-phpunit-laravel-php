@@ -41,4 +41,9 @@ class User extends Authenticatable
     public function getFullnameAttribute() {
         return "$this->firstname $this->lastname";
     }
+
+    // Is Muslim
+    public function isMuslim() {
+        return $this->religious = 'muslim' ? true : false;
+    }
 }
