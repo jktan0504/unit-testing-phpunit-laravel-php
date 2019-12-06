@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Beverage
+Route::resource('beverage', 'Beverage\BeverageController');
